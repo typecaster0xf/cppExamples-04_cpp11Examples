@@ -14,8 +14,8 @@ public:
 	
 protected:
 	
-	const int size;
-	int *arr;
+	const int _size;
+	int*      _arr;
 };
 
 int main()
@@ -25,34 +25,34 @@ int main()
 }
 
 C::C(const int size) :
-size(size),
-arr(new int[size])
+_size(size),
+_arr(new int[size])
 {
-	cout << "Initial Constructor: " << arr << endl;
+	cout << "Initial Constructor: " << _arr << endl;
 }
 
 C::C(const C &c) :
-size(c.size),
-arr(new int[c.size])
+_size(c._size),
+_arr(new int[c._size])
 {
-	memcpy(arr, c.arr, sizeof(int) * size);
+	memcpy(_arr, c._arr, sizeof(int) * _size);
 	
-	cout << "Copy Constructor: " << c.arr << " to " << arr << endl;
+	cout << "Copy Constructor: " << c._arr << " to " << _arr << endl;
 }
 
 C::C(C &&c) :
-size(c.size),
-arr(c.arr)
+_size(c._size),
+_arr(c._arr)
 {
-	c.arr = NULL;
+	c._arr = NULL;
 	
-	cout << "Move Constructor: " << arr << endl;
+	cout << "Move Constructor: " << _arr << endl;
 }
 
 C::~C()
 {
-	if(arr != NULL)
-		delete [] arr;
+	if(_arr != NULL)
+		delete [] _arr;
 	
-	cout << "Destructor: " << arr << endl;
+	cout << "Destructor: " << _arr << endl;
 }
