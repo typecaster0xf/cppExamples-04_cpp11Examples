@@ -7,6 +7,7 @@ class C
 {
 public:
 	
+	C();
 	C(const int size);
 	C(const C &c);
 	C(C &&c);
@@ -22,6 +23,13 @@ int main()
 {
 	cout << "Hello world" << endl;
 	return 0;
+}
+
+C::C() :
+_size(0),
+_arr(NULL)
+{
+	cout << "Default Constructor" << endl;
 }
 
 C::C(const int size) :
