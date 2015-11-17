@@ -21,6 +21,17 @@ int main()
 	vectorOp(v, printV);
 	cout << endl;
 	
+	const unsigned int elementToPrint = 13;
+	void (*printOne)(unsigned int u) = [&](unsigned int u)
+	{
+		if(u == elementToPrint)
+			cout << u << ' ';
+		return;
+	};
+	
+	vectorOp(v, printOne);
+	cout << endl;
+	
 	return 0;
 }
 
