@@ -22,7 +22,7 @@ int main()
 	cout << endl;
 	
 	const unsigned int elementToPrint = 13;
-	void (*printOne)(unsigned int u) = [&](unsigned int u)
+	void (*printOne)(unsigned int u) = [&](unsigned int u) -> void
 	{
 		if(u == elementToPrint)
 			cout << u << ' ';
