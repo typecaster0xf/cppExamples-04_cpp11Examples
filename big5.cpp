@@ -40,7 +40,7 @@ int main()
 
 C::C() :
 _size(0),
-_arr(NULL)
+_arr(nullptr)
 {
 	cout << "Default Constructor" << endl;
 }
@@ -68,14 +68,14 @@ C::C(C &&c) :
 _size(c._size),
 _arr(c._arr)
 {
-	c._arr = NULL;
+	c._arr = nullptr;
 	
 	cout << "Move Constructor: " << _arr << endl;
 }
 
 C::~C()
 {
-	if(_arr != NULL)
+	if(_arr != nullptr)
 		delete [] _arr;
 	
 	cout << "Destructor: " << _arr << endl;
@@ -87,7 +87,7 @@ C& C::operator=(const C &c)
 	
 	int* mySize = const_cast<int*>(&_size);
 	
-	if(_arr != NULL)
+	if(_arr != nullptr)
 		delete [] _arr;
 	
 	*mySize = c._size;
@@ -104,7 +104,7 @@ C& C::operator=(C &&c)
 	int* mySize = const_cast<int*>(&_size);
 	*mySize     = c._size;
 	_arr        = c._arr;
-	c._arr      = NULL;
+	c._arr      = nullptr;
 	
 	return *this;
 }
